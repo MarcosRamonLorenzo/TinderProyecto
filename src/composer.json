@@ -1,0 +1,24 @@
+{
+    "name": "miguel/tinderdwes",
+    "description": "Prueba de ejemplo de una web de citas",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcos",
+            "email": "marcosramon.alu@iespacomolla.es"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "ramsey/uuid": "^4.7",
+        "nesbot/carbon": "^2.16",
+        "symfony/validator": "^7.0@RC",
+        "rakit/validation": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\":"app/"
+        }
+    }
+}
