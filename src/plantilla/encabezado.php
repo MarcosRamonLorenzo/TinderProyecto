@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <title><?= $titulo ?></title>
+    <title><?= $titulo ?? "DWES Tinder" ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
@@ -173,22 +173,29 @@
 <header data-bs-theme="dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Carousel</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="./terminos">Usuarios</a>
-                    </li>
+                    <?php
+                    foreach ($enlaces as $enlace) {
+                        if (isset($enlace['actual'])) {
+                            ?>
+                            <li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' href="<?= $enlace['enlace'] ?>">
+                                    <?= $enlace['descripcion'] ?>
+                                </a>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li class='nav-item'>
+                                <a class="nav-link disabled" href="<?= $enlace['enlace'] ?>">
+                                    <?= $enlace['descripcion'] ?>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                    }
+                    ?>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -197,4 +204,5 @@
             </div>
         </div>
     </nav>
+
 </header>
