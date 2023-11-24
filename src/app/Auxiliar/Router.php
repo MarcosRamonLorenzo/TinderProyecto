@@ -41,7 +41,6 @@ class Router
         $ruta[1]="/".$ruta[1];
         $numParametros=count(($ruta));
 
-        var_dump($ruta);
 
         switch ($numParametros){
             case 2:
