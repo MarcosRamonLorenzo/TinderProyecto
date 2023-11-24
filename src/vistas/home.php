@@ -27,6 +27,17 @@ $diapositivas = [
     "desc_enlace"=>"Precios",
     "imagen"=>"https://media.vogue.mx/photos/5c61d07741573a8f1ec64662/master/w_1600%2Cc_limit/GettyImages-760156091.jpg"
 ]
+
+];
+
+$footer=[
+    "encabezadoFooter"=>"Tinder Web App",
+    "subtituloFooter"=>"App Web Para conocer personas y realizar el focking coito.",
+    "enlaces"=>[
+
+    ]
+
+
 ];
 include_once __DIR__."/../plantilla/slider.php";
 $datosMensaje=['encabezado'=>'Somos los p**** amos',
@@ -36,5 +47,5 @@ $datosMensaje=['encabezado'=>'Somos los p**** amos',
 
 //include_once __DIR__."/../plantilla/mensaje.php";
 
-//include_once __DIR__."/../plantilla/pie.php";
+include_once __DIR__."/../plantilla/pie.php";
 

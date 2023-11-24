@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c2f7de05d0.js" crossorigin="anonymous"></script>
+    <!-- footer-->
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
 
 
 
