@@ -116,8 +116,8 @@ private static $installed = array (
     ),
     'symfony/deprecation-contracts' => 
     array (
-      'pretty_version' => 'v3.3.0',
-      'version' => '3.3.0.0',
+      'pretty_version' => 'v3.4.0',
+      'version' => '3.4.0.0',
       'aliases' => 
       array (
       ),
@@ -161,21 +161,21 @@ private static $installed = array (
     ),
     'symfony/translation' => 
     array (
-      'pretty_version' => 'v6.4.0-BETA2',
-      'version' => '6.4.0.0-beta2',
+      'pretty_version' => 'v6.4.0-RC2',
+      'version' => '6.4.0.0-RC2',
       'aliases' => 
       array (
       ),
-      'reference' => '8057a62933f5609340a4f8c36feeec88c09ea024',
+      'reference' => '25816e0b4526e682db5e1101194327f39956a3ea',
     ),
     'symfony/translation-contracts' => 
     array (
-      'pretty_version' => 'v3.3.0',
-      'version' => '3.3.0.0',
+      'pretty_version' => 'v3.4.0',
+      'version' => '3.4.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '02c24deb352fb0d79db5486c0c79905a85e37e86',
+      'reference' => 'dee0c6e5b4c07ce851b462530088e64b255ac9c5',
     ),
     'symfony/translation-implementation' => 
     array (
@@ -186,12 +186,12 @@ private static $installed = array (
     ),
     'symfony/validator' => 
     array (
-      'pretty_version' => 'v7.0.0-RC1',
-      'version' => '7.0.0.0-RC1',
+      'pretty_version' => 'v7.0.0-RC2',
+      'version' => '7.0.0.0-RC2',
       'aliases' => 
       array (
       ),
-      'reference' => 'd6213c0836ad9fb0a08a86d19a186caaa5a3721d',
+      'reference' => '83df4baa429fb5bd05aa6c7beeed1740148b87ed',
     ),
   ),
 );
