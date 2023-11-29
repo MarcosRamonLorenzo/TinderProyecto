@@ -3,15 +3,19 @@
 namespace App\Modelos;
 
 use App\Clases\Usuario;
+use PDO;
 
 class UsuarioModelo
 {
-    private string $url;
+    private PDO $conexion;
     private string $nombreTabla;
 
     public static function guardarUsuarioBD(Usuario $user)
     {
-    $arrayUsuarios[]=$user;
+        $conexion = new PDO('mysql:dbname=tinder;host=mysql','pringao','passwordpringao');
+        $conexion->setAttribute(PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
+
+        $sql="INSERT INTO usuarios VALUES ()";
     }
 
     public static function devolverUsuariosBD(string $email):array
