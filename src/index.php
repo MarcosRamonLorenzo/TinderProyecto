@@ -25,8 +25,12 @@ $router->get('/user',function(){
 });
 $router->post('/usuario',[UsuarioControladores::class,'guardarUsuario']);
 $router->delete('/usuario',[UsuarioControladores::class,'borrarUsuario']);
+
+
 $router->get('/api/usuarios',[UsuarioControladores::class,'mostrarUsuariosApi']);
-$router->delete('/api/usuarios',[UsuarioControladores::class,'eliminarUsuarioAPI']);
+$router->delete('/api/usuario',[UsuarioControladores::class,'borrarUsuarioApi']);
+$router->post('/api/usuario',[UsuarioControladores::class,'guardarUsuario']);
+$router->get('/api/usuario',[UsuarioControladores::class,'mostrarUsuariosApi']);
 
 //Rutas de forma visual.
 $router->get('/',function (){

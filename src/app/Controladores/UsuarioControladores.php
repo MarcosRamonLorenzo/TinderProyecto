@@ -36,7 +36,7 @@ class UsuarioControladores
         echo "</pre>";
     }
 
-    public static function guardarUsuario()
+    /*public static function guardarUsuario()
     {
         $validator = new Validator();
         $validation =  $validator->make($_POST,[
@@ -57,25 +57,34 @@ class UsuarioControladores
 
             UsuarioModelo::guardarUsuarioBD($usuario);
         }
+    }*/
+
+    public function guardarUsuario(){
+        $usuario = new Usuario();
+        $usuario->setNombre($_POST['nombre']);
+        $usuario->setApellidos($_POST['apellidos']);
+        $usuario->setEmail($_POST['correo']);
+
+        UsuarioModelo::guardarUsuarioBD($usuario);
+
     }
 
-    public function borrarUsuario(int $idUsuario)
+    public function borrarUsuarioApi(string $emailUsuario)
     {
-        echo "A mamar el usuario $idUsuario";
+      if (UsuarioModelo::borrarUsuarioBD($emailUsuario)){
+          echo "Borrado Correcto";
+      }else{
+          echo "No se ha podido borrar el usuario";
+      }
     }
 
     //Metodos API
-    public function mostrarUsuariosApi()
+    public function mostrarUsuariosApi(string $email)
     {
-        echo "{
-            correo:marcosrmaon.alu@ieapcomomolla.es
-            nombre:marcos
-            apellidos:Ramñon lorenzo        
-        
-        }";
+       $arrayUsuario = UsuarioModelo::cargarUsuarioBD($email);
+       $usuario=Usuario::crearUsuariodeArray($arrayUsuario);
+       echo json_encode($usuario->jsonSerialize());
     }
 
-    public function eliminarUsuarioAPI(int $idUsuario){
-        echo "Has elminado a $idUsuario mediante la api ";
-    }
+
 }

@@ -2,16 +2,15 @@
 
 namespace App\Clases;
 
-class Usuario
+class Usuario implements \JsonSerializable
 {
 
-    private string $email;
-    private string $password;
-    private array $fotos;
-    private string $nombre;
-    private string $apellidos;
-    private $sexo;
-    private string $perfil;
+    private ?string $email;
+    private ?string $nombre;
+    private ?string $apellidos;
+
+    private ?array $perfil;
+
 
     public function getEmail(): string
     {
@@ -62,33 +61,6 @@ class Usuario
     {
         $this->apellidos = $apellidos;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getSexo()
-    {
-        return $this->sexo;
-    }
-
-    /**
-     * @param mixed $sexo
-     */
-    public function setSexo($sexo): void
-    {
-        $this->sexo = $sexo;
-    }
-
-    public function getPerfil(): string
-    {
-        return $this->perfil;
-    }
-
-    public function setPerfil(string $perfil): void
-    {
-        $this->perfil = $perfil;
-    }
-
 
 
 
@@ -144,13 +116,31 @@ class Usuario
         return json_encode($usuario);
 
 
+    }
 
+    public static function crearUsuariodeArray(array $datosUsuario):Usuario{
+            $usuario = new Usuario();
+            $usuario->setEmail($datosUsuario['email']??"sincorreo@gmail.com");
+            $usuario->setNombre($datosUsuario['nombre']??"Jane");
+            $usuario->setApellidos($datosUsuario['apellidos']??"Doe");
 
+            return $usuario;
     }
 
 
+    public function jsonSerialize():mixed
+    {
+        $arraySalida = [];
+        if (isset($this->email)){
+            $arraySalida['email']=$this->email;
+        }
+        if (isset($this->nombre)){
+            $arraySalida['nombre']=$this->nombre;
+        }
+        if (isset($this->apellidos)){
+            $arraySalida['apellidos']=$this->apellidos;
+        }
 
-
-
-
+        return $arraySalida;
+    }
 }
